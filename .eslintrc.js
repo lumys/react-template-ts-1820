@@ -18,16 +18,37 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react', 'react-hooks', '@typescript-eslint'],
+  plugins: ['react', 'react-hooks', 'import', '@typescript-eslint'],
   rules: {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
     'prettier/prettier': 'error',
     'react/jsx-filename-extension': [
       'error',
       {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    ],
+    'react/function-component-definition': [
+      'error',
+      { namedComponents: 'arrow-function' },
+    ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          '**/*.test.tsx.js',
+          '**/*.test.tsx.jsx',
+          '**/*.test.tsx.ts',
+          '**/*.test.tsx.tsx',
+          '**/*.spec.js',
+          '**/*.spec.jsx',
+          '**/*.spec.ts',
+          '**/*.spec.tsx',
+          '**/*.config.js',
+        ],
       },
     ],
     'import/extensions': [
@@ -46,11 +67,11 @@ module.exports = {
       version: 'detect',
     },
     'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        moduleDirectory: ['node_modules', '@types'],
-      },
       typescript: {},
+      // node: {
+      //   extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      //   moduleDirectory: ['node_modules', '@types'],
+      // },
     },
   },
 };
