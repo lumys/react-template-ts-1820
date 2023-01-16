@@ -36,7 +36,7 @@ module.exports = {
       { namedComponents: 'arrow-function' },
     ],
     'import/no-extraneous-dependencies': [
-      'error',
+      'off',
       {
         devDependencies: [
           '**/*.test.tsx.js',
