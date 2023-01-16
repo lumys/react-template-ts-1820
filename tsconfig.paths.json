@@ -2,7 +2,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["src/*"],
+      "@hooks/*": ["src/lib/hooks/*"],
+      "@images/*": ["src/lib/assets/images/*"],
+      "@constants/*": ["src/lib/constants/*"],
+      "@c-types/*": ["src/lib/types/*"],
+      "@pages/*": ["src/pages/*"],
+      "@routes/*": ["src/routes/*"]
     }
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouteError } from 'react-router-dom';
-import { RouteErrorResponseType } from '~/lib/@types/common';
+import { RouteErrorResponseType } from '@c-types/common';
 
 const Page = () => {
   const error: RouteErrorResponseType = useRouteError();
