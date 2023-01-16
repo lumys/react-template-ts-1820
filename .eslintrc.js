@@ -36,7 +36,7 @@ module.exports = {
       { namedComponents: 'arrow-function' },
     ],
     'import/no-extraneous-dependencies': [
-      'error',
+      'off',
       {
         devDependencies: [
           '**/*.test.tsx.js',
@@ -70,7 +70,7 @@ module.exports = {
       typescript: {},
       // node: {
       //   extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      //   moduleDirectory: ['node_modules', '@types'],
+      //   moduleDirectory: ['node_modules', 'types'],
       // },
     },
   },
