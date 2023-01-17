@@ -4,11 +4,7 @@ import ErrorPage from '~/pages/ErrorPage';
 import mainRoute from '~/routes/main/mainRoute';
 
 const Template = () => {
-  return (
-    <div>
-      <Outlet />
-    </div>
-  );
+  return <Outlet />;
 };
 
 const router = createBrowserRouter([
