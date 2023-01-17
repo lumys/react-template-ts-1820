@@ -35,6 +35,8 @@ module.exports = {
       'error',
       { namedComponents: 'arrow-function' },
     ],
+    'react/jsx-props-no-spreading': 'off',
+    'react/require-default-props': 'off',
     'import/no-extraneous-dependencies': [
       'off',
       {

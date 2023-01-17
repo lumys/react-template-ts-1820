@@ -1,5 +1,5 @@
 import React from 'react';
-import { DataRouteObject } from 'react-router-dom';
+import { CustomDataRouteObject } from '@c-types/common';
 
 const Page = () => {
   return (
@@ -10,7 +10,7 @@ const Page = () => {
   );
 };
 
-export const aboutPage: DataRouteObject = {
+export const aboutPage: CustomDataRouteObject = {
   id: 'about',
   path: '/about',
   element: <Page />,
