@@ -1,20 +1,20 @@
 import React from 'react';
 import { CustomDataRouteObject } from '@c-types/common';
+import Template from '@pages/HomePage/Template';
+
+const loader = async () => {
+  return 'User';
+};
 
 const Page = () => {
-  return (
-    <div>
-      <h1>Home Page</h1>
-      <p>Hello world</p>
-    </div>
-  );
+  return <Template />;
 };
 
 export const homePage: CustomDataRouteObject = {
   id: 'home',
   path: '/',
   element: <Page />,
-  loader: undefined,
+  loader,
 };
 
 export default Page;

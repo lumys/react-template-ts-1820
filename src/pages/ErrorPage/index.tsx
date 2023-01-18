@@ -1,19 +1,12 @@
 import React from 'react';
 import { useRouteError } from 'react-router-dom';
 import { RouteErrorResponseType } from '@c-types/common';
+import Template from '@pages/ErrorPage/Template';
 
 const Page = () => {
-  const error: RouteErrorResponseType = useRouteError();
+  const { statusText }: RouteErrorResponseType = useRouteError();
 
-  return (
-    <div>
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
-        <i>{error.statusText}</i>
-      </p>
-    </div>
-  );
+  return <Template detailMessage={statusText} />;
 };
 
 export default Page;

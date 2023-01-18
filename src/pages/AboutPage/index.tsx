@@ -1,13 +1,9 @@
 import React from 'react';
 import { CustomDataRouteObject } from '@c-types/common';
+import Template from '@pages/AboutPage/Template';
 
 const Page = () => {
-  return (
-    <div>
-      <h1>About Page</h1>
-      <p>Hello world</p>
-    </div>
-  );
+  return <Template />;
 };
 
 export const aboutPage: CustomDataRouteObject = {

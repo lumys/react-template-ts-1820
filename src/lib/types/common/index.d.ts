@@ -22,3 +22,5 @@ export type CustomDataRouteObject = CustomIndexRouteObject & {
   children?: CustomDataRouteObject[];
   id: string;
 };
+
+export type TemplateProps<> = {};
