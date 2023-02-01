@@ -1,4 +1,4 @@
-import { Box, styled, useTheme } from '@mui/material';
+import { Box, useTheme } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import React, { useState } from 'react';
 import { CustomDataRouteObject } from '@c-types/common';
