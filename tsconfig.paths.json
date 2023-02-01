@@ -4,6 +4,7 @@
     "paths": {
       "~/*": ["src/*"],
       "@hooks/*": ["src/lib/hooks/*"],
+      "@styles/*": ["src/lib/styles/*"],
       "@images/*": ["src/lib/assets/images/*"],
       "@constants/*": ["src/lib/constants/*"],
       "@components/*": ["src/components/*"],

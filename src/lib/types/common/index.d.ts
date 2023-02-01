@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { RouteObject } from 'react-router/dist/lib/context';
 
 interface RouteErrorResponse {
@@ -20,7 +21,8 @@ export type CustomIndexRouteObject = RouteObject & {
 
 export type CustomDataRouteObject = CustomIndexRouteObject & {
   children?: CustomDataRouteObject[];
+  icon?: ReactNode;
   id: string;
 };
 
-export type TemplateProps<> = {};
+// export type TemplateProps<> = {};

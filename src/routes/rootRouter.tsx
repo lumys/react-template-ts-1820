@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBrowserRouter, Outlet } from 'react-router-dom';
 import ErrorPage from '~/pages/ErrorPage';
-import mainRoute from '~/routes/main/mainRoute';
+import mainRoute from '@routes/MainRoute';
 
 const Template = () => {
   return <Outlet />;
