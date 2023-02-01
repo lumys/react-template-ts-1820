@@ -1,4 +1,4 @@
-import { Box, styled } from '@mui/material';
+import { Box, styled, useTheme } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import React, { useState } from 'react';
 import { CustomDataRouteObject } from '@c-types/common';
@@ -21,6 +21,8 @@ interface TemplateProps {
 }
 
 const Template = ({ routes }: TemplateProps) => {
+  const theme = useTheme();
+
   const [isOpen, setOpen] = useState(false);
 
   return (
@@ -38,8 +40,14 @@ const Template = ({ routes }: TemplateProps) => {
         drawerWidth={drawerWidth}
       />
 
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
+      <Box
+        component="main"
+        sx={{
+          flexGrow: 1,
+          p: 3,
+        }}
+      >
+        <Box sx={{ ...theme.mixins.toolbar }} />
         <Outlet />
       </Box>
     </Box>

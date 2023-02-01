@@ -64,7 +64,7 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 interface MiniDrawerProps {
-  open: boolean | true;
+  open: boolean;
   onClose: EventHandler<MouseEvent<HTMLElement>>;
   routes: CustomDataRouteObject[];
   deepLevel?: number;

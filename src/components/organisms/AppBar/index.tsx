@@ -10,21 +10,20 @@ import React, { EventHandler, MouseEvent } from 'react';
 import { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar/AppBar';
 
 interface AppBarProps extends MuiAppBarProps {
-  open: boolean | true;
-  drawerWidth?: number;
+  open: boolean;
 }
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
-})<AppBarProps>(({ theme, open, drawerWidth }) => ({
+})<AppBarProps & { width: number }>(({ theme, open, width }) => ({
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(['width', 'margin'], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
   ...(open && {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: width,
+    width: `calc(100% - ${width}px)`,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
@@ -36,9 +35,12 @@ const Component = ({
   open,
   onOpen,
   drawerWidth = 240,
-}: AppBarProps & { onOpen: EventHandler<MouseEvent<HTMLElement>> }) => {
+}: AppBarProps & {
+  onOpen: EventHandler<MouseEvent<HTMLElement>>;
+  drawerWidth?: number;
+}) => {
   return (
-    <AppBar position="fixed" open={open} drawerWidth={drawerWidth}>
+    <AppBar position="fixed" open={open} width={drawerWidth}>
       <Toolbar>
         <IconButton
           size="large"
