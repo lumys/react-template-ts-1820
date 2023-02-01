@@ -1,6 +1,7 @@
 import {
   CSSObject,
   Drawer as MuiDrawer,
+  DrawerProps,
   IconButton,
   List,
   ListItem,
@@ -17,8 +18,8 @@ import { useNavigate } from 'react-router-dom';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
-const openedMixin = (theme: Theme): CSSObject => ({
-  width: 240,
+const openedMixin = (theme: Theme, width: number): CSSObject => ({
+  width,
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.enteringScreen,
@@ -47,14 +48,14 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== 'open',
-})(({ theme, open }) => ({
+})<DrawerProps & { width: number }>(({ theme, open, width }) => ({
   flexShrink: 0,
   whiteSpace: 'nowrap',
   boxSizing: 'border-box',
   overflowX: 'hidden',
   ...(open && {
-    ...openedMixin(theme),
-    '& .MuiDrawer-paper': openedMixin(theme),
+    ...openedMixin(theme, width),
+    '& .MuiDrawer-paper': openedMixin(theme, width),
   }),
   ...(!open && {
     ...closedMixin(theme),
@@ -67,7 +68,7 @@ interface MiniDrawerProps {
   onClose: EventHandler<MouseEvent<HTMLElement>>;
   routes: CustomDataRouteObject[];
   deepLevel?: number;
-  // drawerWidth?: number | 240;
+  drawerWidth?: number;
 }
 
 const Component = ({
@@ -75,6 +76,7 @@ const Component = ({
   onClose,
   routes,
   deepLevel = 2,
+  drawerWidth = 240,
 }: MiniDrawerProps) => {
   const theme = useTheme();
   const navigate = useNavigate();
@@ -139,7 +141,7 @@ const Component = ({
   );
 
   return (
-    <Drawer variant="permanent" open={open}>
+    <Drawer variant="permanent" open={open} width={drawerWidth}>
       <DrawerHeader>
         <IconButton onClick={onClose}>
           {theme.direction === 'rtl' ? (

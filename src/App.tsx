@@ -6,7 +6,6 @@ import { ThemeProvider } from '@mui/material';
 import theme from '@styles/theme';
 
 const App = () => {
-  console.log(theme);
   return (
     <RecoilRoot>
       <ThemeProvider theme={theme}>
